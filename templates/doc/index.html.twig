@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Documentation{% endblock %}
+
+{% block body %}
+
+<div class="container border">
+  {% include 'doc/menu.html.twig' %}
+
+  <hr />
+
+  <div id="content" class="py-4">
+    <div class="item mb-5">
+      <h3>Localisation</h3>
+      <div>Permet de rechercher les structures par géolocalisation et 50km aux alentours. Il est possible de trier les structures par type de structure ou type de handicap.</div>
+    </div>
+    <div class="item mb-5">
+      <h3>Ville</h3>
+      <div>Permet de rechercher les structures par ville et 50k aux alentours. Il est possible de trier les structures par type de structure ou type de handicap.</div>
+    </div>
+    <div class="item mb-5">
+      <h3>Département</h3>
+      <div>Permet de rechercher les structures d'un département donné. Il est possible de trier les structures par type de structure ou type de handicap.</div>
+    </div>
+    <div class="item mb-5">
+      <h3>Nom de ville</h3>
+      <div>Permet de récupérer les villes contenant le texte passé en paramètre.</div>
+    </div>
+    <div class="item mb-5">
+      <h3>Nom de département</h3>
+      <div>Permet de récupérer les départements contenant le texte passé en paramètre.</div>
+    </div>
+  </div>
+</div>
+{% endblock %}

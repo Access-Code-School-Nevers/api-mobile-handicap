@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Documentation - Recherche par département{% endblock %}
+
+{% block body %}
+
+<div class="container border">
+  {% include 'doc/menu.html.twig' %}
+
+  <hr />
+
+  <div id="content" class="py-4">
+    <h2>Département</h2>
+
+    <hr />
+
+    <h3><span class="green">GET</span> /api/departement/</h3>
+  </div>
+
+  <div>Permet de rechercher les structures d'un département donné. Il est possible de trier les structures par type de structure ou type de handicap.</div>
+
+  <div class="mt-4 grey">Exemple url :</div>
+  <code>http://api-mobile.promo-29.codeur.online/api/departement/?departement=01&apikey=okaz15481ez</code>
+
+  <div class="size-xl mt-4">Paramètres</div>
+
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="row table-like">
+        <div class="col-3">apikey</div>
+        <div class="col-2 green">string</div>
+        <div class="col-5">default : << apikey >></div>
+        <div class="col-2 font-weight-bold">Required</div>
+      </div>
+      <div class="row table-like bg-grey">
+        <div class="col-3">departement</div>
+        <div class="col-2 green">int</div>
+        <div class="col-5"></div>
+        <div class="col-2 font-weight-bold">Required</div>
+      </div>
+      <div class="row table-like">
+        <div class="col-3">structure</div>
+        <div class="col-2 green">string</div>
+        <div class="col-5">pattern : {int}-{int}</div>
+        <div class="col-2">optional</div>
+      </div>
+      <div class="row table-like bg-grey">
+        <div class="col-3">handicap</div>
+        <div class="col-2 green">string</div>
+        <div class="col-5">pattern : {int}-{int}</div>
+        <div class="col-2">optional</div>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  <div class="mt-5 grey">Exemple Response Json :</div>
+  <code>
+  {<br />
+      &nbsp;&nbsp;&nbsp;<span class="purple">"id"</span>: <span class="green">"7537"</span>,<br />
+      &nbsp;&nbsp;&nbsp;<span class="purple">"code_departement_id"</span>: <span class="green">"3"</span>,<br />
+      &nbsp;&nbsp;&nbsp;<span class="purple">"code_commune_id"</span>: <span class="green">"1231"</span>,<br />
+      &nbsp;&nbsp;&nbsp;<span class="purple">"nom"</span>: <span class="green">"VIEILLIR CHEZ SOI"</span>,<br />
+      &nbsp;&nbsp;&nbsp;<span class="purple">"adresse"</span>: <span class="green">"60 rue de bourgogne"</span>,<br />
+      &nbsp;&nbsp;&nbsp;<span class="purple">"longitude"</span>: <span class="green">"3.33944700000000000000"</span>,<br />
+      &nbsp;&nbsp;&nbsp;<span class="purple">"latitude"</span>: <span class="green">"46.56766200000000000000"</span>,<br />
+      &nbsp;&nbsp;&nbsp;<span class="purple">"information"</span>: <span class="green">"Servir de maintien a domicile des personnes agees ou handicapees"</span>,<br />
+      &nbsp;&nbsp;&nbsp;<span class="purple">"lien"</span>: <span class="green">""</span>,<br />
+      &nbsp;&nbsp;&nbsp;<span class="purple">"type_structure"</span>: <span class="green">"1"</span>,<br />
+      &nbsp;&nbsp;&nbsp;<span class="purple">"types_handicap"</span>: <span class="green">null</span><br />
+  }
+  </code>
+</div>
+{% endblock %}

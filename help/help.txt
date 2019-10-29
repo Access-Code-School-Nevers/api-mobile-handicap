@@ -1,0 +1,55 @@
+Requêtes possibles:
+
+- Recherche par géolocalisation
+	/api/structures/?lg=LONGITUDE&lat=LATITUDE&apikey=TOKEN
+- Recherche par géolocalisation et type de structure
+	/api/structures/?lg=LONGITUDE&lat=LATITUDE&structure=STRUCTURE1-STRUCTURE2&apikey=TOKEN
+- Recherche par géolocalisation et type de handicap
+	/api/structures/?lg=LONGITUDE&lat=LATITUDE&handicap=TYPEHANDICAP1-TYPEHANDICAP2&apikey=TOKEN
+
+- Recherche par ville
+	/api/ville/?ville=NOMVILLE&apikey=TOKEN
+- Recherche par ville et type de structure
+	/api/ville/?ville=NOMVILLE&structure=STRUCTURE1-STRUCTURE2&apikey=TOKEN
+- Recherche par ville et type de handicap
+	/api/ville/?ville=NOMVILLE&handicap=TYPEHANDICAP1-TYPEHANDICAP2&apikey=TOKEN
+
+- Recherche par département
+	/api/departement/?departement=NUMERODEPARTEMENT&apikey=TOKEN
+- Recherche par département et type de structure
+	/api/departement/?departement=NOMVILLE&structure=STRUCTURE1-STRUCTURE2&apikey=TOKEN
+- Recherche par département et type de handicap
+	/api/departement/?departement=NOMVILLE&handicap=TYPEHANDICAP1-TYPEHANDICAP2&apikey=TOKEN
+
+
+Champs en réponse :
+- id : Id de la ligne
+- nom : nom de la structure
+- adresse : Adresse de la structure
+- longitude : Coordonnées de longitude
+- latitude : Coordonnées de latitude
+- information : Texte d'information présent uniquement sur les associations
+- lien : Lien web (rarement présent)
+- type_structure : Type de structure (se référer aux codes ci-dessous)
+- types_handicap : Types de handicap, séparés par une virgule
+
+
+Type de structure :
+1 : associations
+2 : centre ressources handicap
+3 etablissements et services medico-sociaux
+4 : mdph
+5 : établissements scolaires
+
+Type de handicap
+1 : Cognitif ou mental
+2 : Trouble du langage et apprentissage
+3 : Trouble visuel
+4 : Trouble auditif
+5 : Troubles des fonctions motrices
+6 : Trouble envahissant du développement
+
+- Pour la recherche par ville, il faut utiliser urlencode (fonction php) pour que les caractères spéciaux
+soient encodés
+
+- Pour le département, il faut passer le numéro de département (Ain = 01)
