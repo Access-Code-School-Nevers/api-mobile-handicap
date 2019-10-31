@@ -307,7 +307,8 @@ class StructureRepository extends ServiceEntityRepository
               LEFT JOIN departement ON structure.code_departement_id = departement.id
               LEFT JOIN handicap ON structure.id = handicap.structure_id_id
               LEFT JOIN type_handicap ON handicap.type_handicap_id_id = type_handicap.id
-              WHERE departement.code = :departement";
+              WHERE departement.code = :departement
+              GROUP BY structure.id";
       $stmt = $conn->prepare($sql);
       $stmt->execute(['departement' => $departement]);
 
